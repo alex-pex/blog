@@ -18,10 +18,10 @@ export default class Template extends React.Component {
     return (
       <div>
         <Helmet
-          title="Gatsby Default (Blog) Starter"
+          title="Liste des articles - Le blog d'Alexandre Paixao"
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            // { name: 'description', content: 'Sample' },
+            { name: 'keywords', content: 'blogger, blogspot, blog, blogger.com, blogspot.com, blog gratuit, blog personnel, weblog, créer un blog, nouveau blog' },
           ]}
         />
         <div
@@ -45,7 +45,7 @@ export default class Template extends React.Component {
                   textDecoration: 'none',
                 }}
               >
-                Gatsby Blog
+                Alexandre Paixao
               </Link>
             </h1>
           </div>
