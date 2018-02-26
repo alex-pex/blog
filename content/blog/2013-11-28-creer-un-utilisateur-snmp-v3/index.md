@@ -11,7 +11,7 @@ La configuration d'un service SNMP est assez compliquée. J'ai mis pas mal de te
 
 Voici en résumé ce qu'il y a à retenir :
 
-```
+```bash
 sudo apt-get install snmpd snmp
 ```
 
@@ -19,7 +19,7 @@ Seul snmpd est nécessaire pour le serveur, mais le client snmp permet de créer
 
 Pour ajouter un utilisateur il faut couper le daemon avant :
 
-```
+```bash
 sudo service snmpd stop
 
 sudo net-snmp-config --create-snmpv3-user -a SHA -x AES
@@ -29,13 +29,13 @@ On choisit un login, un password, et une clé d'encryptage (qui peut être la m�
 
 Pour ma part, j'ai modifié le type d'utilisateur de rwuser vers rouser. La commande précédente indique clairement quels fichiers ont été modifiés, il est donc facile de revenir dessus. Ensuite on relance le daemon :
 
-```
+```bash
 sudo service snmpd start
 ```
 
 Enfin, on vérifie que tout est bon
 
-```
+```bash
 snmpwalk -v3 -u clinique -a SHA -A cahuzac -x AES -X cahuzac -l authPriv localhost
 ```
 

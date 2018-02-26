@@ -13,7 +13,7 @@ Comme ça fait un bail que je l'ai fait, je n'ai plus le détail de la procédur
 
 Pour l'installation, j'ai procédé comme suit (cf bloc-note que j'avais conservé)
 
-```
+```bash
 sudo adduser git
 scp ~/.ssh/id_rsa.pub git@localhost:~/admin.pub
 
@@ -30,7 +30,7 @@ git clone git@localhost:gitolite-admin.git
 
 Ensuite pour convertir le fichier de configuration :
 
-```
+```bash
 gitolite/convert-gitosis-conf gitosis/gitosis.conf > gitolite.conf
 ```
 

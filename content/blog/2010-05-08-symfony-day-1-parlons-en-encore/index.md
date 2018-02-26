@@ -28,32 +28,36 @@ Je vous laisse découvrir [le tuto](http://www.symfony-project.org/jobeet/1_4/Do
 - on vous tapera sur les doigts si vous choisissez de mettre vos fichiers dans C:\\wamp\\www\\jobeet\\, donc mettez les dans C:\\wamp\\home\\jobeet\ . Et ne configurez pas votre domaine test en local sur le port 8080, mais définissez un sous domaine de localhost.
 
 Pour ce faire, editez C:\\Windows\\System32\\drivers\\etc\\hosts. Ajoutez :
-> 127.0.0.1        jobeet.localhost
+
+```
+127.0.0.1        jobeet.localhost
+```
 
 Ensuite allez dans C:\\wamp\\bin\\apache\\Apache2.2.11\\conf
 Editez httpd.conf, enlevez le dièse devant "Include conf/extra/httpd-vhosts.conf".
 Enfin editez extra\\httpd-vhosts.conf et collez y ce contenu :
 
-> <VirtualHost *:80>
->     DocumentRoot "C:/wamp/www/"
-> </VirtualHost>
->
-> <VirtualHost *:80>
->   ServerName jobeet.localhost
->   DocumentRoot "c:\\wamp\\home\\jobeet\\web"
->   DirectoryIndex index.php
->   <Directory "c:\\wamp\\home\\jobeet\\web">
->     AllowOverride All
->     Allow from All
->   </Directory>
->
->   Alias /sf "c:\\wamp\\home\\jobeet\\lib\\vendor\\symfony\\data\\web\\sf"
->   <Directory "c:\\wamp\\home\\jobeet\\lib\\vendor\\symfony\\data\\web\\sf">
->     AllowOverride All
->     Allow from All
->   </Directory>
-> </VirtualHost>
+```
+<VirtualHost *:80>
+    DocumentRoot "C:/wamp/www/"
+</VirtualHost>
 
+<VirtualHost *:80>
+  ServerName jobeet.localhost
+  DocumentRoot "c:\\wamp\\home\\jobeet\\web"
+  DirectoryIndex index.php
+  <Directory "c:\\wamp\\home\\jobeet\\web">
+    AllowOverride All
+    Allow from All
+  </Directory>
+
+  Alias /sf "c:\\wamp\\home\\jobeet\\lib\\vendor\\symfony\\data\\web\\sf"
+  <Directory "c:\\wamp\\home\\jobeet\\lib\\vendor\\symfony\\data\\web\\sf">
+    AllowOverride All
+    Allow from All
+  </Directory>
+</VirtualHost>
+```
 
 C'est très important de laisser le premier virtualhost, sinon vous perdrez l'accès à la belle page d'accueil de localhost.
 

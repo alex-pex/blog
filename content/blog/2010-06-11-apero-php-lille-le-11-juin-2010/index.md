@@ -15,17 +15,23 @@ Pour les traits, au départ je voyais pas l'intérêt comparé à l'héritage mu
 
 En ce qui concerne l'utilisation directe des tableaux en sortie de fonctions, c'est tout simplement une évidence. Avant, il était impossible de faire :
 
-> $this->getArticles( )\[0\] = 'premier';
+```php
+$this->getArticles( )[0] = 'premier';
+```
 
 On devait faire :
 
-> $articles = $this->getArticles( );
-> $articles\[0\] = 'premier';
+```php
+$articles = $this->getArticles( );
+$articles[0] = 'premier';
+```
 
 Enfin, on a parlé du dilemne du typage dans les paramètres de fonction. En gros :
 
-> function fois_dix(int $num) { return $num * 10; }
-> $nombre = "123";
-> echo fois_dix( $nombre );
+```php
+function fois_dix(int $num) { return $num * 10; }
+$nombre = "123";
+echo fois_dix( $nombre );
+```
 
 La question est : doit-on envoyer une erreur (ou une exception ! ;-) ), ou convertir silencieusement puisqu'au final ça change rien. Avant de venir, j'étais favorable au typage dur, et donc à l'envoi d'une erreur. Mais à y réfléchir, ce qui m'intéresse le plus c'est qu'on m'envoie un nombre et pas "hello", je me fiche un peu qu'il soit stocké sous forme de chaine ou de nombre. La discussion est ouverte, pour ma part j'ai déjà mon avis sur la question.

@@ -38,8 +38,10 @@ Tout d’abord, créer la variable ANDROID\_HOME avec comme valeur “C:\\Progra
 
 [Téléchargez PhoneGap](http://www.phonegap.com/download), dézippez le dans le dossier de MOTODEV, puis ouvrez la ligne de commande dans “C:\\Program Files\\Motorola Mobility\\MOTODEV Studio for Android 2.0\\phonegap\\phonegap-android\\framework” (nécessite d'etre admin, car on est dans "Program Files"). Exécutez :
 
-> android update project -p .
-> ant jar
+```bash
+android update project -p .
+ant jar
+```
 
 Normalement vous aurez un beau “BUILD SUCCESS”
 
